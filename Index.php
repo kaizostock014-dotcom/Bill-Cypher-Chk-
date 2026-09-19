@@ -681,16 +681,24 @@ sendMessage($chatId, "<b>✅ LIVE KEY</b>%0A<u>KEY:</u> <code>$sec</code>%0A<u>R
 
 
 function sendMessage($chatId, $message){
-    global $website, $message_id;
+    $url = $GLOBALS['website'] . "/sendMessage";
 
-    $url = $website . "/sendMessage?" . http_build_query([
+    $data = [
         "chat_id" => $chatId,
         "text" => $message,
-        "reply_to_message_id" => $message_id,
         "parse_mode" => "HTML"
-    ]);
+    ];
 
-    file_get_contents($url);
+    $options = [
+        "http" => [
+            "method" => "POST",
+            "header" => "Content-Type: application/x-www-form-urlencoded\r\n",
+            "content" => http_build_query($data)
+        ]
+    ];
+
+    $context = stream_context_create($options);
+    file_get_contents($url, false, $context);
 }
 
 ////////////////=============[LapanWasTaken]===============////////////////
