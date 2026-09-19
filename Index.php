@@ -28,8 +28,20 @@ sendMessage($chatId, "<b>¡Hola! 👋\nEscribe /help para ver todos mis comandos
 
 //////////=========[Help Command]=========//////////
 
-elseif ((strpos($message, "!help") === 0)||(strpos($message, "/help") === 0)){
-sendMessage($chatId, "<u>Bin lookup:</u> <code>!bin</code> xxxxxx%0A<u>SK Key Check:</u> <code>!sk</code> sk_live%0A<u> To know ur info%0A%0A<b>Bot Made by LapanWasTaken </b>");
+elseif ((strpos($message, "!help") === 0) || (strpos($message, "/help") === 0)) {
+
+    sendMessage($chatId,
+        "📋 <b>MENÚ PRINCIPAL</b>\n\n" .
+        "👋 <b>Bienvenido a Bill Cypher Chk</b>\n\n" .
+        "📌 <b>Comandos disponibles</b>\n" .
+        "🔹 /start — Iniciar el bot\n" .
+        "🔹 /help — Mostrar este menú\n" .
+        "🔹 /info — Ver tu información\n\n" .
+        "━━━━━━━━━━━━━━\n" .
+        "🤖 <b>Bill Cypher Chk</b>\n" .
+        "⚡ Bot activo"
+    );
+
 }
 
 //////////=========[Info Command]=========//////////
