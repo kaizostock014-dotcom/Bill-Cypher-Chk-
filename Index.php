@@ -14,6 +14,7 @@ $print = print_r($update);
 $chatId = $update["message"]["chat"]["id"];
 $gId = $update["message"]["from"]["id"];
 $userId = $update["message"]["from"]["id"];
+$isAdmin = ($userId == $adminId);
 $firstname = $update["message"]["from"]["first_name"];
 $username = $update["message"]["from"]["username"];
 $message = $update["message"]["text"];
