@@ -25,7 +25,7 @@ if __name__=='__main__':
 
 # Intenta pedir la entrada interactiva; si falla por EOF (como en Render), usa un valor por defecto o variable de entorno
 try:
-    ask_list = input('\n{}[\{\}?\{\}] List cc (ex: list.txt): {}'.format(brblue, white, brblue, white))
+    ask_list = input('\n{} List cc (ex: list.txt): '.format(white))
 except EOFError:
     ask_list = os.getenv("LIST_CC", "list.txt")
     if os.path.exists(ask_list):
