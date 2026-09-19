@@ -679,9 +679,18 @@ sendMessage($chatId, "<b>✅ LIVE KEY</b>%0A<u>KEY:</u> <code>$sec</code>%0A<u>R
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-function sendMessage ($chatId, $message){
-$url = $GLOBALS[website]."/sendMessage?chat_id=".$chatId."&text=".$message."&reply_to_message_id=".$message_id."&parse_mode=HTML";
-file_get_contents($url);      
+
+function sendMessage($chatId, $message){
+    global $website, $message_id;
+
+    $url = $website . "/sendMessage?" . http_build_query([
+        "chat_id" => $chatId,
+        "text" => $message,
+        "reply_to_message_id" => $message_id,
+        "parse_mode" => "HTML"
+    ]);
+
+    file_get_contents($url);
 }
 
 ////////////////=============[LapanWasTaken]===============////////////////
