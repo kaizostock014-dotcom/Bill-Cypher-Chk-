@@ -23,7 +23,7 @@ $message_id = $update["message"]["message_id"];
 //////////=========[Start Command]=========//////////
 
 if ((strpos($message, "!start") === 0)||(strpos($message, "/start") === 0)){
-sendMessage($chatId, "<b>Hello there!!\nType /help to know all my commands!!\n\nBot Made by LapanWasTaken @Cendawannn</b>");
+sendMessage($chatId, "<b>¡Hola! 👋\nEscribe /help para ver todos mis comandos.\n\nBot creado por LapanWasTaken @Cendawannn</b>");
 }
 
 //////////=========[Help Command]=========//////////
