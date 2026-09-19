@@ -4,7 +4,7 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html/
 
-RUN echo "DirectoryIndex main.php" > /etc/apache2/mods-enabled/dir.conf
+RUN echo "DirectoryIndex Index.php" > /etc/apache2/mods-enabled/dir.conf
 
 RUN chown -R www-data:www-data /var/www/html
 
